@@ -4,17 +4,6 @@
 
 This repository contains a project for predicting stock market prices using Recurrent Neural Networks (RNN), specifically with a Bidirectional Long Short-Term Memory (LSTM) model. The project is implemented in Python and consists of two main files: `stock_csv.py` and `main.py`.
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Requirements](#requirements)
-- [Project Structure](#project-structure)
-- [Dataset](#dataset)
-- [Usage](#usage)
-- [Model Architecture](#model-architecture)
-- [Evaluation](#evaluation)
-- [Results](#results)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
