@@ -1,2 +1,2 @@
 # DLStock
-Stock Market Prediction using Deep Recurrent Neural Networks
+# Stock Market Prediction using Deep Recurrent Neural Networks
