@@ -34,3 +34,10 @@ To run this project, you need to have the following libraries installed:
 You can install the required libraries using pip:
 ```bash
 pip install pandas numpy tensorflow sklearn matplotlib
+```
+
+## Project Structure
+The repository contains the following files:
+
+* 'stock_csv.py' : This file includes code for loading the dataset and saving it into CSV files.
+* 'main.py' : This file includes code for reading the data, creating and training the Bidirectional LSTM model, and evaluating its performance.
