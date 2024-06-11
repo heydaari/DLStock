@@ -51,14 +51,6 @@ company = input('ENTER THE NAME OF COMPANY : ')
 data = pd.read_csv(f'Data/{company}.csv')
 
 
-# ploting COMPANY close prices
-plt.figure(figsize=(16, 8))
-plt.title(f'{company} close prices')
-plt.plot(data['Close'][201::])
-plt.xlabel('Date')
-plt.ylabel(f'{company} close META USD$ ')
-plt.show()
-
 
 close = data.filter(['Close'])
 dataset = close.values
@@ -74,11 +66,13 @@ epoch_number = int(input('ENTER THE EPOCHS : '))
 
 x_train, y_train = x_train[2000:], y_train[2000:]
 
-# model LSTM
+# Creating Recurrent Model
 model = Sequential([
 
-    Bidirectional(LSTM(256, return_sequences=True, input_shape= (x_train.shape[1], 1), activation='tanh')),
-    keras.layers.Dropout(0.25),
+    Bidirectional(LSTM(256, return_sequences= True, input_shape= (x_train.shape[1], 1), activation='tanh')),
+    keras.layers.Dropout(0.2),
+    Bidirectional(LSTM(512, return_sequences= True, activation='tanh')),
+    keras.layers.Dropout(0.2),
     Bidirectional(LSTM(128, return_sequences= False, activation='tanh')),
     keras.layers.Dropout(0.2),
     Dense(128, activation='elu'),
@@ -93,7 +87,7 @@ model = Sequential([
 ])
 
 
-model.compile(optimizer='adam', loss = keras.losses.MSE, metrics=['mse'], run_eagerly=True)
+model.compile(optimizer='adam', loss = 'mse' , run_eagerly=True)
 
 
 model.fit(x_train, y_train, batch_size=1, epochs=epoch_number)
